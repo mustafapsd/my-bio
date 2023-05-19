@@ -1,6 +1,14 @@
 # My Bio
 This is a project that showcases your personal bio using Vue.js.
 
+## Tech Stack
+This project uses the following technologies:
+
+- JavaScript
+- Vue.js
+- npm
+- Yarn
+
 ## Project setup
 To get started, run the following command to install the project dependencies:
 
