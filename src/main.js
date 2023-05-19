@@ -8,6 +8,7 @@ import Resume from './components/resume/Resume.vue'
 import Homeland from './components/homeland/Homeland.vue'
 import Mevlana from './components/mevlana/Mevlana.vue'
 import Artworks from './components/artworks/Artworks.vue'
+import Login from './components/login/Login.vue'
 
 const routes = [
     { path: '/', component: About },
@@ -15,6 +16,8 @@ const routes = [
     { path: '/homeland', component: Homeland },
     { path: '/mevlana', component: Mevlana },
     { path: '/artworks', component: Artworks },
+    { path: '/login', component: Login },
+    { path: '/:pathMatch(.*)*', redirect: '/' }
 ]
 
 const router = VueRouter.createRouter({
