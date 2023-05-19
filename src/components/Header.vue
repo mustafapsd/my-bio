@@ -21,7 +21,7 @@
                         <router-link class="nav-link" to="/mevlana">Mevlana</router-link>
                     </li>
                     <li class="nav-item">
-                        <router-link class="nav-link" to="/interests">Interests</router-link>
+                        <router-link class="nav-link" to="/artworks">Artworks</router-link>
                     </li>
                     <li class="nav-item">
                         <router-link class="nav-link" to="/login">Login/Logout</router-link>

@@ -7,12 +7,14 @@ import About from './components/about/About.vue'
 import Resume from './components/resume/Resume.vue'
 import Homeland from './components/homeland/Homeland.vue'
 import Mevlana from './components/mevlana/Mevlana.vue'
+import Artworks from './components/artworks/Artworks.vue'
 
 const routes = [
     { path: '/', component: About },
     { path: '/resume', component: Resume },
     { path: '/homeland', component: Homeland },
     { path: '/mevlana', component: Mevlana },
+    { path: '/artworks', component: Artworks },
 ]
 
 const router = VueRouter.createRouter({
