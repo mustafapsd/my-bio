@@ -50,21 +50,15 @@ export default {
             })
                 .then(response => response.json())
                 .then(data => {
-                    if (data.status == 'success') {
-                        localStorage.setItem('token', data.token)
-                        alert(`
-                            You have successfully logged in.
-                        `)
-                        this.$router.push({ name: '/' })
+                    if (data.success) {
+                        localStorage.setItem('token', data.token);
+                        alert(`You have successfully logged in.`);
+                        this.$router.push('/');
                     } else {
-                        alert(`
-                            You have entered wrong username or password.
-                        `)
+                        alert(`You have entered wrong username or password.`);
                     }
                 }).catch(() => {
-                    alert(`
-                        An error occured while logging in.
-                    `)
+                    alert(`An error occured while logging in.`);
                 })
 
         }
