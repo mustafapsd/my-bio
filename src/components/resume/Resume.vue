@@ -1,70 +1,72 @@
 <template>
-    <div class="row">
-        <div class="col">
-            <h1>Resume</h1>
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col">
+                <h1>Resume</h1>
+            </div>
+
+            <div class="col-auto">
+                <a href="https://drive.google.com/file/d/1oAp7Vz_vEiW0fsafJmYhieWbsMZRZfPb/view?usp=sharing" target="_blank"
+                    class="btn btn-primary">
+                    Download PDF
+                </a>
+            </div>
+
+            <div class="col-12">
+                <hr>
+            </div>
         </div>
 
-        <div class="col-auto">
-            <a href="https://drive.google.com/file/d/1oAp7Vz_vEiW0fsafJmYhieWbsMZRZfPb/view?usp=sharing" target="_blank"
-                class="btn btn-primary">
-                Download PDF
-            </a>
+        <div class="row mt-4">
+            <div class="col-auto">
+                <h2>Experiences</h2>
+                <hr>
+            </div>
+
         </div>
 
-        <div class="col-12">
-            <hr>
+        <div class="row timeline">
+            <template v-for="(experience, index) in experiences" :key="index">
+                <div class="col-12 timeline-item">
+                    <h3 class="bold-text">
+                        {{ experience.company }} - {{ experience.title }} ({{ experience.date }})
+                    </h3>
+
+                    <p class="item-description">
+                        {{ experience.description }}
+                    </p>
+
+                </div>
+            </template>
         </div>
-    </div>
 
-    <div class="row mt-4">
-        <div class="col-auto">
-            <h2>Experiences</h2>
-            <hr>
+        <div class="row mt-4 pt-4">
+            <div class="col-auto">
+                <h2>Education</h2>
+                <hr>
+            </div>
         </div>
 
-    </div>
-
-    <div class="row timeline">
-        <template v-for="(experience, index) in experiences" :key="index">
+        <div class="row timeline">
             <div class="col-12 timeline-item">
                 <h3 class="bold-text">
-                    {{ experience.company }} - {{ experience.title }} ({{ experience.date }})
+                    Sakarya University - (2022 - Present)
                 </h3>
 
                 <p class="item-description">
-                    {{ experience.description }}
+                    Computer Engineering
                 </p>
-
             </div>
-        </template>
-    </div>
 
-    <div class="row mt-4 pt-4">
-        <div class="col-auto">
-            <h2>Education</h2>
-            <hr>
-        </div>
-    </div>
+            <div class="col-12 timeline-item">
+                <h3 class="bold-text">
+                    Eskişehir Osmangazi University (2019 - 2022)
+                </h3>
 
-    <div class="row timeline">
-        <div class="col-12 timeline-item">
-            <h3 class="bold-text">
-                Sakarya University -  (2022 - Present)
-            </h3>
-
-            <p class="item-description">
-                Computer Engineering
-            </p>
-        </div>
-
-        <div class="col-12 timeline-item">
-            <h3 class="bold-text">
-                Eskişehir Osmangazi University (2019 - 2022)
-            </h3>
-
-            <p class="item-description">
-                Electrical and Electronics Engineering
-            </p>
+                <p class="item-description">
+                    Electrical and Electronics Engineering
+                </p>
+            </div>
         </div>
     </div>
 </template>

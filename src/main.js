@@ -4,11 +4,13 @@ import { createApp } from 'vue'
 import * as VueRouter from 'vue-router'
 import About from './components/about/About.vue'
 import Resume from './components/resume/Resume.vue'
+import Homeland from './components/homeland/Homeland.vue'
 import AppVue from "./App.vue"
 
 const routes = [
     { path: '/', component: About },
     { path: '/resume', component: Resume },
+    { path: '/homeland', component: Homeland },
 ]
 
 const router = VueRouter.createRouter({

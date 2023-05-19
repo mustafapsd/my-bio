@@ -1,38 +1,41 @@
 <template>
-    <div class="row py-4 my-4">
-        <div class="col-12 col-lg-6">
-            <h1>
-                About Me
-            </h1>
+    <div class="container">
+        <div class="row py-4 my-4">
+            <div class="col-12 col-lg-6">
+                <h1>
+                    About Me
+                </h1>
 
-            <p>
-                As a skilled Front End Developer with a passion for delivering exceptional user experiences, I excel at
-                quickly learning new technologies and staying ahead of industry trends. With a strong focus on continuous
-                improvement and a proven track record of meeting deadlines under pressure, I am committed to delivering
-                top-notch projects that exceed expectations. As a team player with excellent communication and
-                problem-solving skills, I thrive in collaborative environments and am eager to contribute to your
-                organization's success.
-            </p>
+                <p>
+                    As a skilled Front End Developer with a passion for delivering exceptional user experiences, I excel at
+                    quickly learning new technologies and staying ahead of industry trends. With a strong focus on
+                    continuous
+                    improvement and a proven track record of meeting deadlines under pressure, I am committed to delivering
+                    top-notch projects that exceed expectations. As a team player with excellent communication and
+                    problem-solving skills, I thrive in collaborative environments and am eager to contribute to your
+                    organization's success.
+                </p>
 
-            <div class="row">
-                <template v-for="(skill, index) in skills" :key="index">
-                    <div class="col-2 mb-2 d-flex flex-column">
-                        <img :src="skill.logo" :alt="skill.title" class="img-fluid skill-logo">
+                <div class="row">
+                    <template v-for="(skill, index) in skills" :key="index">
+                        <div class="col-2 mb-2 d-flex flex-column">
+                            <img :src="skill.logo" :alt="skill.title" class="img-fluid skill-logo">
 
-                        <h5 class="text-muted skill-title">
-                            {{ skill.title }}
-                        </h5>
-                    </div>
-                </template>
+                            <h5 class="text-muted skill-title">
+                                {{ skill.title }}
+                            </h5>
+                        </div>
+                    </template>
+                </div>
             </div>
+
+            <div class="col-12 col-lg-6 d-flex justify-content-center">
+                <img src="https://media.licdn.com/dms/image/C4E03AQHpfdPg3wPZ3A/profile-displayphoto-shrink_800_800/0/1631968358855?e=1689811200&v=beta&t=CSqNJLYGOKWsFfmOMKIMeGX0ZdymXjDLDabvQMysY5U"
+                    alt="About Me" class="img-fluid">
+            </div>
+
+
         </div>
-
-        <div class="col-12 col-lg-6 d-flex justify-content-center">
-            <img src="https://media.licdn.com/dms/image/C4E03AQHpfdPg3wPZ3A/profile-displayphoto-shrink_800_800/0/1631968358855?e=1689811200&v=beta&t=CSqNJLYGOKWsFfmOMKIMeGX0ZdymXjDLDabvQMysY5U"
-                alt="About Me" class="img-fluid">
-        </div>
-
-
     </div>
 </template>
 
