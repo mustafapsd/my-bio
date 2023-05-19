@@ -1,0 +1,53 @@
+.timeline {
+    position: relative;
+    padding-left: var(--bs-gutter-x);
+    gap: 1.5rem;
+    padding-top: .75rem;
+    overflow-x: hidden;
+
+    &::before {
+        content: '';
+        position: absolute;
+        left: calc(var(--bs-gutter-x) * .5);
+        top: 0;
+
+        width: 1rem;
+        height: 100%;
+
+        border-radius: 10rem;
+
+        background-color: #CCCCCC;
+    }
+
+    .timeline-item {
+        position: relative;
+        transition: all .3s ease-in-out;
+        transform-origin: left center;
+        word-break: break-word;
+        transform: scale(.9);
+
+        &::before {
+            content: '';
+            position: absolute;
+
+            left: calc(var(--bs-gutter-x) * -.5);
+            top: 50%;
+            transform: translate(-20%, calc(-50% - 1.5rem));
+
+
+            width: 1.5rem;
+            height: 1.5rem;
+            border-radius: 5rem;
+
+            background-color: var(--bs-primary);
+        }
+
+        &:hover {
+            transform: scale(1);
+        }
+
+        .item-description {
+            font-size: 1.3rem;
+        }
+    }
+}
