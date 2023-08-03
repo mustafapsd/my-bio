@@ -4,10 +4,19 @@ export const contactFormStore = reactive({
     contactName: '',
     email: '',
     message: '',
-    setFormValues: function (name, email, subject) {
+    dateTime: '',
+    country: '',
+    gender: '',
+    subscribeNewsletter: false,
+
+    setFormValues: function (name, email, message, dateTime, country, gender, subscribeNewsletter) {
         this.contactName = name;
         this.email = email;
-        this.message = subject;
+        this.message = message;
+        this.dateTime = dateTime;
+        this.country = country;
+        this.gender = gender;
+        this.subscribeNewsletter = subscribeNewsletter;
 
         localStorage.setItem('contactFormStore', JSON.stringify(this));
     }
@@ -20,4 +29,8 @@ if (FORM) {
     contactFormStore.contactName = form.contactName;
     contactFormStore.email = form.email;
     contactFormStore.message = form.message;
+    contactFormStore.dateTime = form.dateTime;
+    contactFormStore.country = form.country;
+    contactFormStore.gender = form.gender;
+    contactFormStore.subscribeNewsletter = form.subscribeNewsletter;
 }

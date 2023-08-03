@@ -35,9 +35,61 @@
                         </div>
                     </div>
 
+                    <div class="mb-3">
+                        <label for="dateTime" class="form-label">Date and Time</label>
+                        <input v-model="v$.form.dateTime.$model" type="datetime-local" class="form-control" id="dateTime">
+                        <div class="form-text text-danger" v-if="v$.form.dateTime.$errors">
+                            {{ v$.form.dateTime.$errors.map(error => error.$message).join(', ') }}
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="country" class="form-label">Country</label>
+                        <select v-model="v$.form.country.$model" class="form-select" id="country">
+                            <option value="" disabled>Select a country</option>
+                            <option value="usa">United States</option>
+                            <option value="canada">Canada</option>
+                            <option value="uk">United Kingdom</option>
+                        </select>
+                        <div class="form-text text-danger" v-if="v$.form.country.$errors">
+                            {{ v$.form.country.$errors.map(error => error.$message).join(', ') }}
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Gender</label>
+                        <div class="form-check">
+                            <input v-model="v$.form.gender.$model" type="radio" class="form-check-input" id="male"
+                                value="male">
+                            <label class="form-check-label" for="male">Male</label>
+                        </div>
+                        <div class="form-check">
+                            <input v-model="v$.form.gender.$model" type="radio" class="form-check-input" id="female"
+                                value="female">
+                            <label class="form-check-label" for="female">Female</label>
+                        </div>
+                        <div class="form-text text-danger" v-if="v$.form.gender.$errors">
+                            {{ v$.form.gender.$errors.map(error => error.$message).join(', ') }}
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <div class="form-check">
+                            <input v-model="v$.form.subscribeNewsletter.$model" type="checkbox" class="form-check-input"
+                                id="subscribeNewsletter">
+                            <label class="form-check-label" for="subscribeNewsletter">Subscribe to Newsletter</label>
+                        </div>
+                        <div class="form-text text-danger" v-if="v$.form.subscribeNewsletter.$errors">
+                            {{ v$.form.subscribeNewsletter.$errors.map(error => error.$message).join(', ') }}
+                        </div>
+                    </div>
+
                     <div class="d-flex justify-content-end">
                         <button type="button" class="btn btn-secondary" @click="resetForm">Reset</button>
 
+
+                        <button type="button" @click="validateAndSubmitForm" class="btn btn-primary ms-2">Submit (Vanilla
+                            JS)</button>
 
                         <button :disabled="v$.form.$invalid" type="submit" class="btn btn-primary ms-2">Submit</button>
                     </div>
@@ -63,7 +115,11 @@ export default {
             form: {
                 contactName: '',
                 email: '',
-                message: ''
+                message: '',
+                dateTime: '', // Add datetime input
+                country: '',  // Add select input
+                gender: '',   // Add radio buttons
+                subscribeNewsletter: false, // Add checkbox
             }
         }
     },
@@ -79,7 +135,19 @@ export default {
                 },
                 message: {
                     required
-                }
+                },
+                dateTime: {
+                    required
+                },
+                country: {
+                    required
+                },
+                gender: {
+                    required
+                },
+                subscribeNewsletter: {
+                    required
+                },
             }
         }
     },
@@ -88,17 +156,41 @@ export default {
             this.form = {
                 contactName: '',
                 email: '',
-                message: ''
+                message: '',
+                dateTime: '',
+                country: '',
+                gender: '',
+                subscribeNewsletter: false,
+            };
+        },
+        submitForm() {
+            contactFormStore.setFormValues(
+                this.v$.form.$model.contactName,
+                this.v$.form.$model.email,
+                this.v$.form.$model.message,
+                this.v$.form.$model.dateTime,
+                this.v$.form.$model.country,
+                this.v$.form.$model.gender,
+                this.v$.form.$model.subscribeNewsletter
+            );
+            this.$router.push('/contact/result');
+        },
+        validateAndSubmitForm() {
+            if (this.validateForm()) {
+                this.submitForm();
+            } else {
+                alert('Please fix the errors in the form');
             }
         },
+        validateForm() {
+            const form = this.v$.form
 
-        submitForm() {
-            // route to result page
-            console.log(this.v$.form.$model)
-            contactFormStore.setFormValues(this.v$.form.$model.contactName, this.v$.form.$model.email, this.v$.form.$model.message)
-            this.$router.push('/contact/result')
+            if (!form.$invalid) {
+                return true;
+            } else {
+                return false;
+            }
         }
     }
 }
-
 </script>

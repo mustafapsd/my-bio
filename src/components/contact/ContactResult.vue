@@ -6,7 +6,6 @@
                     Thank you for contacting us!
                 </h1>
 
-
                 <h5 class="fs-5">
                     Your Contact Information
                 </h5>
@@ -16,6 +15,7 @@
         <div class="row">
             <div class="col-lg-6 offset-lg-3 offset-0 col-12">
                 <div class="d-flex flex-column">
+
                     <div>
                         <b>
                             Name:
@@ -33,6 +33,30 @@
                             Message:
                         </b> {{ contactFormStore.message }}
                     </div>
+
+                    <div>
+                        <b>
+                            Date and Time:
+                        </b> {{ contactFormStore.dateTime }}
+                    </div>
+
+                    <div>
+                        <b>
+                            Country:
+                        </b> {{ contactFormStore.country }}
+                    </div>
+
+                    <div>
+                        <b>
+                            Gender:
+                        </b> {{ contactFormStore.gender }}
+                    </div>
+
+                    <div>
+                        <b>
+                            Subscribe to Newsletter:
+                        </b> {{ contactFormStore.subscribeNewsletter ? 'Yes' : 'No' }}
+                    </div>
                 </div>
 
                 <div class="mt-4">
@@ -44,7 +68,6 @@
                 </div>
             </div>
         </div>
-
     </div>
 </template>
 
@@ -60,4 +83,3 @@ export default {
     },
 }
 </script>
-
