@@ -68,7 +68,7 @@ const skills = [
     },
     {
         title: 'SCSS',
-        logo: 'https://sass-lang.com/assets/img/logos/logo-b6e1ef6e.svg',
+        logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Sass_Logo_Color.svg/1280px-Sass_Logo_Color.svg.png',
     },
     {
         title: 'JavaScript (JS)',
