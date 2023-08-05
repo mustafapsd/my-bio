@@ -30,7 +30,7 @@
             </div>
 
             <div class="col-12 col-lg-6 d-flex justify-content-center">
-                <img src="https://media.licdn.com/dms/image/C4E03AQHpfdPg3wPZ3A/profile-displayphoto-shrink_800_800/0/1631968358855?e=1689811200&v=beta&t=CSqNJLYGOKWsFfmOMKIMeGX0ZdymXjDLDabvQMysY5U"
+                <img src="https://media.licdn.com/dms/image/C4E03AQHpfdPg3wPZ3A/profile-displayphoto-shrink_800_800/0/1631968358855?e=1696464000&v=beta&t=WY2kJHudNHiUeUvkt2VNqkUzVF_aSzhMLMnZbQOYX7g"
                     alt="About Me" class="img-fluid">
             </div>
 
